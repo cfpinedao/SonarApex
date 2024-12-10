@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright (c) Fundacion Jala. All rights reserved.
+  ~ Licensed under the MIT license. See LICENSE file in the project root for full license information.
+  -->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.fundacionjala.enforce.sonarqube</groupId>
+        <artifactId>apex</artifactId>
+        <version>1.0b${build.number}</version>
+    </parent>
+
+    <artifactId>apex-plugin</artifactId>
+    <packaging>sonar-plugin</packaging>
+
+    <name>Apex :: Plugin</name>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.sonarsource.sonarqube</groupId>
+            <artifactId>sonar-plugin-api</artifactId>
+            <version>9.9</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>apex-squid</artifactId>
+            <version>1.0b${build.number}</version>
+            <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>apex-check</artifactId>
+            <version>1.0b${build.number}</version>
+            <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.8.9</version> <!-- Última versión estable -->
+        </dependency>
+        <!-- <dependency>
+            <groupId>org.easytesting</groupId>
+            <artifactId>fest-assert</artifactId>
+            <version>1.4</version>
+            <scope>test</scope>
+            <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>org.easytesting</groupId>
+            <artifactId>fest-util</artifactId>
+            <version>1.1.6</version>
+            <scope>test</scope>
+            <type>jar</type>
+        </dependency> -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>1.7.36</version> <!-- Última versión estable -->
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.sonarsource.sonar-packaging-maven-plugin</groupId>
+                <artifactId>sonar-packaging-maven-plugin</artifactId>
+                <version>1.15</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <pluginKey>Sonarqube Apex</pluginKey>
+                    <pluginClass>org.fundacionjala.enforce.sonarqube.apex.ApexPlugin</pluginClass>
+                    <pluginName>Apex</pluginName>
+                    <pluginDescription>Apex static code analyzer.</pluginDescription>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

@@ -1,0 +1,13 @@
+{
+    "title": "\"Test.startTest()\" and \"Test.stopTest()\" should only be used once for each test.",
+    "status": "ready",
+    "remediation": {
+        "func": "Constant\/Issue",
+        "constantCost": "5min"
+    },
+    "sqaleSubCharacteristic": "MODULARITY",
+    "tags": [
+        "confusing"
+    ],
+    "defaultSeverity": "Major"
+}

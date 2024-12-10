@@ -1,0 +1,14 @@
+{
+    "title": "Assertions should evaluate boolean variables.",
+    "status": "ready",
+    "remediation": {
+        "func": "Constant\/Issue",
+        "constantCost": "3min"
+    },
+    "sqaleSubCharacteristic": "UNIT TESTING TESTABILITY",
+    "tags": [
+        "bad practice"
+    ],
+    "defaultSeverity": "Minor"
+}
+

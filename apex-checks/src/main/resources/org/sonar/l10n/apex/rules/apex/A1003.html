@@ -1,0 +1,25 @@
+<!--
+  ~ Copyright (c) Fundacion Jala. All rights reserved.
+  ~ Licensed under the MIT license. See LICENSE file in the project root for full license information.
+  -->
+
+<p>
+        Putting a DML statement inside a while loop is a performance problem since it can send more DML requests than necessary. Instead, create a list containing all of the records you want to query and include them all in a single DML statement.
+</p>
+
+<h2>Noncompliant Code Example</h2>
+
+<pre>
+while(true) {
+    merge newAcct;
+}
+</pre>
+
+<h2>Compliant Solution</h2>
+
+<pre>
+while(true) {
+    ...
+}
+merge newAcct; 
+</pre>

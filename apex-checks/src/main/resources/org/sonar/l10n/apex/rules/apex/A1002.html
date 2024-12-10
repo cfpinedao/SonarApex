@@ -1,0 +1,26 @@
+<!--
+  ~ Copyright (c) Fundacion Jala. All rights reserved.
+  ~ Licensed under the MIT license. See LICENSE file in the project root for full license information.
+  -->
+
+<p>
+    Defining naming conventions is key to make it possible for a team to efficiently collaborate. 
+    All method names must match the provided regular expression.
+</p>
+
+<h2>Noncompliant Code Example</h2>
+<p>With default provided regular expression: ^[a-z][a-zA-Z0-9]+$</p>
+
+<pre>
+class MyClass:
+  private boolean 2myMethod:
+    return boolean #Noncompliant type return
+</pre>
+
+<h2>Compliant Solution</h2>
+
+<pre>
+class MyClass:
+  private boolean myMethod:
+    return boolean #Noncompliant type return
+</pre>

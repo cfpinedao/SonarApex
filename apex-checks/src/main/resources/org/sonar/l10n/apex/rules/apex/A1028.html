@@ -1,0 +1,21 @@
+<p>
+While empty catch block statements do not violate the language, they do not provide meaningful feedback and can make it harder to debug issues.
+</p>
+
+<h2>Non-Compliant Code</h2>
+<pre>
+try{
+	throwableCall();
+}catch(Exception ex){
+	//I am not doing anything here
+}
+</pre>
+
+<h2>Compliant Code</h2>
+<pre>
+try{
+	throwableCall();
+}catch(Exception ex){
+	System.debug('I am handling this');
+}
+</pre>

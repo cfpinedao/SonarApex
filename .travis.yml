@@ -1,0 +1,20 @@
+language: java
+jdk:
+  - oraclejdk8
+notifications:
+  email:
+    - Alejandro.Ruiz@jalasoft.com
+    - Marco.Cadima@jalasoft.com
+    - Jimmy.Rojas@jalasoft.com
+    - Dan.Canqui@jalasoft.com
+    - Fernando.Hurtado@jalasoft.com
+script: "mvn test"
+script: "mvn package -Dbuild.number=$TRAVIS_BUILD_NUMBER"
+deploy:
+    provider: bintray
+    file: "descriptor.json"
+    user: $BINTRAY_USER_NAME
+    key: $BINTRAY_API_KEY
+    skip_cleanup: true # to upload artifacts created during the build
+    on:
+     branch: master

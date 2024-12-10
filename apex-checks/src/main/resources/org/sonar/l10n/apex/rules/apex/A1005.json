@@ -1,0 +1,13 @@
+{
+    "title": "Constructor methods should not have DML statements.",
+    "status": "ready",
+    "remediation": {
+        "func": "Constant\/Issue",
+        "constantCost": "5min"
+    },
+    "sqaleSubCharacteristic": "READABILITY",
+    "tags": [
+        "bug"
+    ],
+    "defaultSeverity": "Critical"
+}
